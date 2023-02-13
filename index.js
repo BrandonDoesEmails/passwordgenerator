@@ -27,23 +27,22 @@ const characters = [
 
 let passwordOne = document.getElementById('password-one');
 let passwordTwo = document.getElementById('password-two');
-let passwordlength = 15;
+let passwordlength = 16;
 
-let getRandomArr = function() {
+let getRandomCharacter = function() {
     let randomIndex = Math.floor(Math.random() * characters.length);
     return characters[randomIndex]
 }
 
 let generate = function() {
     clear();
-    let randomPassword = '';
     for(let i = 0; i < passwordlength; i++) {
-        passwordOne.textContent += getRandomArr();
-        passwordTwo.textContent += getRandomArr();
+        passwordOne.textContent += getRandomCharacter();
+        passwordTwo.textContent += getRandomCharacter();
     }
 }
 
 let clear = function() {
-    passwordOne.textContent = ' ';
-    passwordTwo.textContent = ' ';
+    passwordOne.textContent = '';
+    passwordTwo.textContent = '';
 }
